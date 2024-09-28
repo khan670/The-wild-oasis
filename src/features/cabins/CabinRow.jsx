@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
-import { useState } from "react";
 import CreateCabinForm from "./CreateCabinForm";
 import { useDeleteCabin } from "./useDeleteCabin";
 import { HiSquare2Stack, HiPencil, HiTrash } from "react-icons/hi2";
@@ -30,12 +29,12 @@ const Img = styled.img`
   transform: scale(1.5) translateX(-7px);
 `;
 
-const Cabin = styled.div`
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--color-grey-600);
-  font-family: "Sono";
-`;
+// const Cabin = styled.div`
+//   font-size: 1.6rem;
+//   font-weight: 600;
+//   color: var(--color-grey-600);
+//   font-family: "Sono";
+// `;
 
 const Price = styled.div`
   font-family: "Sono";
@@ -48,8 +47,7 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 function CabinRow({ cabin }) {
-  const { isCreating, createCabin } = useCreateCabin();
-  const [showForm, setShowForm] = useState(false);
+  const { createCabin } = useCreateCabin();
   const {
     id: cabinId,
     name,
